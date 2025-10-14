@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - HDen Coffee</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ====== Tabs Styling ====== */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: #2c2c2c6c;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .tab-btn.active {
+            background: #000000;
+            color: #fff;
+        }
+
+        .menu-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            color: #2b2b2b;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-switcher">
+        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+        <button onclick="switchLanguage('ar')" class="lang-btn" id="lang-ar">AR</button>
+    </div>
+
+    <div class="menu-container">
+        <a href="index.html" class="back-btn" data-en="← Back to Home" data-ar="← العودة للرئيسية">← Back to Home</a>
+        <h1 class="menu-title" data-en="Our Menu" data-ar="قائمتنا">Our Menu</h1>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="all" data-en="All" data-ar="الكل">الكل</button>
+            <button class="tab-btn" data-tab="hot" data-en="Hot Drinks" data-ar=" الحار">الحار</button>
+            <button class="tab-btn" data-tab="cold" data-en="Cold Drinks" data-ar=" البارد">البارد</button>
+            <button class="tab-btn" data-tab="desserts" data-en="Desserts" data-ar="الحلا">الحلا</button>
+        </div>
+
+        <!-- Hot Drinks Section -->
+        <div class="menu-section active" id="hot">
+            <h2 class="section-title" data-en="Hot Drinks" data-ar="المشروبات الحارة">Hot Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="photo/Espresso.webp" alt="Espresso" class="product-image">
+                    <h3 class="product-name" data-en="Espresso" data-ar="إسبريسو">Espresso</h3>
+                    <p class="product-description" data-en="Rich and bold espresso shot, made from premium coffee beans" data-ar="قهوة إسبريسو غنية وقوية، مصنوعة من حبوب البن الفاخرة">Rich and bold espresso shot, made from premium coffee beans</p>
+                    <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="photo/LATEH.JPG" alt="Cappuccino" class="product-image">
+                    <h3 class="product-name" data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</h3>
+                    <p class="product-description" data-en="Perfect blend of espresso, steamed milk, and foam" data-ar="مزيج مثالي من الإسبريسو والحليب المبخر والرغوة">Perfect blend of espresso, steamed milk, and foam</p>
+                    <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="photo/LATEH.JPG" alt="Latte" class="product-image">
+                    <h3 class="product-name" data-en="Latte" data-ar="لاتيه">Latte</h3>
+                    <p class="product-description" data-en="Smooth and creamy latte with steamed milk" data-ar="لاتيه ناعم وكريمي مع الحليب المبخر">Smooth and creamy latte with steamed milk</p>
+                    <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="photo/HOT.JPG" alt="Mocha" class="product-image">
+                    <h3 class="product-name" data-en="Mocha" data-ar="موكا">Mocha</h3>
+                    <p class="product-description" data-en="Delicious combination of coffee and chocolate" data-ar="مزيج لذيذ من القهوة والشوكولاتة">Delicious combination of coffee and chocolate</p>
+                    <p class="product-price" data-en="22 SAR" data-ar="22 ريال">22 SAR</p>
+                </div>
+
+                <div class="menu-item">
+                    <img src="photo/V60.JPG" alt="Americano" class="product-image">
+                    <h3 class="product-name" data-en="Americano" data-ar="أمريكانو">Americano</h3>
+                    <p class="product-description" data-en="Classic espresso diluted with hot water" data-ar="إسبريسو كلاسيكي مخفف بالماء الساخن">Classic espresso diluted with hot water</p>
+                    <p class="product-price" data-en="16 SAR" data-ar="16 ريال">16 SAR</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cold Drinks Section -->
+        <div class="menu-section active" id="cold">
+            <h2 class="section-title" data-en="Cold Drinks" data-ar="المشروبات الباردة">Cold Drinks</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="photo/V60.JPG" alt="Cold Brew" class="product-image">
+                    <h3 class="product-name" data-en="Cold Brew" data-ar="كولد برو">Cold Brew</h3>
+                    <p class="product-description" data-en="Smooth cold-brewed coffee, perfect for hot days" data-ar="قهوة باردة ناعمة، مثالية للأيام الحارة">Smooth cold-brewed coffee, perfect for hot days</p>
+                    <p class="product-price" data-en="25 SAR" data-ar="25 ريال">25 SAR</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="menu-section active" id="desserts">
+            <h2 class="section-title" data-en="Desserts" data-ar="الحلويات">Desserts</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="photo/CAKE.JPG" alt="Chocolate Cake" class="product-image">
+                    <h3 class="product-name" data-en="Chocolate Cake" data-ar="كيكة الشوكولاتة">Chocolate Cake</h3>
+                    <p class="product-description" data-en="Rich and moist chocolate cake topped with ganache" data-ar="كيكة شوكولاتة غنية ورطبة مزينة بجاناش لذيذ">Rich and moist chocolate cake topped with ganache</p>
+                    <p class="product-price" data-en="28 SAR" data-ar="28 ريال">28 SAR</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-media">
+            <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon snapchat" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
+            <a href="#" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // === Tabs Functionality ===
+        const tabs = document.querySelectorAll(".tab-btn");
+        const sections = document.querySelectorAll(".menu-section");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", () => {
+                tabs.forEach(t => t.classList.remove("active"));
+                tab.classList.add("active");
+
+                if (tab.dataset.tab === "all") {
+                    sections.forEach(s => s.classList.add("active"));
+                } else {
+                    sections.forEach(s => {
+                        s.classList.remove("active");
+                        if (s.id === tab.dataset.tab) {
+                            s.classList.add("active");
+                        }
+                    });
+                }
+            });
+        });
+
+        // === Language Switcher ===
+        function switchLanguage(lang) {
+            document.querySelectorAll("[data-en]").forEach(el => {
+                el.textContent = el.getAttribute(`data-${lang}`);
+            });
+
+            document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
+            document.getElementById(`lang-${lang}`).classList.add("active");
+        }
+    </script>
+</body>
+</html>
