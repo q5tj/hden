@@ -1,184 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - HDen Coffee</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - HDen Coffee</title>
 
-    <style>
-        /* ====== Tabs Styling ====== */
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
 
-        .tab-btn {
-            background: #2c2c2c6c;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-weight: 600;
-            color: #ffffff;
-        }
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-        .tab-btn.active {
-            background: #000000;
-            color: #fff;
-        }
-
-        .menu-section {
-            display: none;
-            animation: fadeIn 0.3s ease-in;
-        }
-
-        .menu-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            color: #2b2b2b;
-        }
-    </style>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-    <div class="language-switcher">
-        <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
-        <button onclick="switchLanguage('ar')" class="lang-btn" id="lang-ar">AR</button>
+  <!-- 🌐 Language Switcher -->
+  <div class="language-switcher">
+    <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
+    <button onclick="switchLanguage('ar')" class="lang-btn" id="lang-ar">AR</button>
+  </div>
+
+  <div class="menu-container">
+    <a href="index.html" class="back-btn" data-en="← Back to Home" data-ar="← العودة للرئيسية">← Back to Home</a>
+    <h1 class="menu-title" data-en="Our Menu" data-ar="قائمتنا">Our Menu</h1>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="all" data-en="All" data-ar="الكل">All</button>
+      <button class="tab-btn" data-tab="hot" data-en="Hot Drinks" data-ar="المشروبات الحارة">Hot Drinks</button>
+      <button class="tab-btn" data-tab="cold" data-en="Cold Drinks" data-ar="المشروبات الباردة">Cold Drinks</button>
+      <button class="tab-btn" data-tab="summer" data-en="Summer Drinks" data-ar="مشروبات الصيف">Summer Drinks</button>
+      <button class="tab-btn" data-tab="sweets" data-en="Sweets" data-ar="الحلويات">Sweets</button>
+      <button class="tab-btn" data-tab="pastry" data-en="Pastry" data-ar="المعجنات">Pastry</button>
     </div>
 
-    <div class="menu-container">
-        <a href="index.html" class="back-btn" data-en="← Back to Home" data-ar="← العودة للرئيسية">← Back to Home</a>
-        <h1 class="menu-title" data-en="Our Menu" data-ar="قائمتنا">Our Menu</h1>
-
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="all" data-en="All" data-ar="الكل">الكل</button>
-            <button class="tab-btn" data-tab="hot" data-en="Hot Drinks" data-ar=" الحار">الحار</button>
-            <button class="tab-btn" data-tab="cold" data-en="Cold Drinks" data-ar=" البارد">البارد</button>
-            <button class="tab-btn" data-tab="desserts" data-en="Desserts" data-ar="الحلا">الحلا</button>
+    <!-- Hot Drinks Section -->
+    <div class="menu-section active" id="hot">
+      <h2 class="section-title" data-en="Hot Drinks" data-ar="المشروبات الحارة">Hot Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="photo/Espresso.jpeg" alt="Espresso" class="product-image">
+          <h3 class="product-name" data-en="Espresso" data-ar="إسبريسو">Espresso</h3>
+          <p class="product-description" data-en="Rich and bold espresso shot" data-ar="قهوة إسبريسو غنية وقوية">Rich and bold espresso shot</p>
+          <p class="product-price" data-en="13 SAR" data-ar="13 ريال">13 SAR</p>
         </div>
 
-        <!-- Hot Drinks Section -->
-        <div class="menu-section active" id="hot">
-            <h2 class="section-title" data-en="Hot Drinks" data-ar="المشروبات الحارة">Hot Drinks</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="photo/Espresso.webp" alt="Espresso" class="product-image">
-                    <h3 class="product-name" data-en="Espresso" data-ar="إسبريسو">Espresso</h3>
-                    <p class="product-description" data-en="Rich and bold espresso shot, made from premium coffee beans" data-ar="قهوة إسبريسو غنية وقوية، مصنوعة من حبوب البن الفاخرة">Rich and bold espresso shot, made from premium coffee beans</p>
-                    <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
-                </div>
-
-                <div class="menu-item">
-                    <img src="photo/LATEH.JPG" alt="Cappuccino" class="product-image">
-                    <h3 class="product-name" data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</h3>
-                    <p class="product-description" data-en="Perfect blend of espresso, steamed milk, and foam" data-ar="مزيج مثالي من الإسبريسو والحليب المبخر والرغوة">Perfect blend of espresso, steamed milk, and foam</p>
-                    <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
-                </div>
-
-                <div class="menu-item">
-                    <img src="photo/LATEH.JPG" alt="Latte" class="product-image">
-                    <h3 class="product-name" data-en="Latte" data-ar="لاتيه">Latte</h3>
-                    <p class="product-description" data-en="Smooth and creamy latte with steamed milk" data-ar="لاتيه ناعم وكريمي مع الحليب المبخر">Smooth and creamy latte with steamed milk</p>
-                    <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
-                </div>
-
-                <div class="menu-item">
-                    <img src="photo/HOT.JPG" alt="Mocha" class="product-image">
-                    <h3 class="product-name" data-en="Mocha" data-ar="موكا">Mocha</h3>
-                    <p class="product-description" data-en="Delicious combination of coffee and chocolate" data-ar="مزيج لذيذ من القهوة والشوكولاتة">Delicious combination of coffee and chocolate</p>
-                    <p class="product-price" data-en="22 SAR" data-ar="22 ريال">22 SAR</p>
-                </div>
-
-                <div class="menu-item">
-                    <img src="photo/V60.JPG" alt="Americano" class="product-image">
-                    <h3 class="product-name" data-en="Americano" data-ar="أمريكانو">Americano</h3>
-                    <p class="product-description" data-en="Classic espresso diluted with hot water" data-ar="إسبريسو كلاسيكي مخفف بالماء الساخن">Classic espresso diluted with hot water</p>
-                    <p class="product-price" data-en="16 SAR" data-ar="16 ريال">16 SAR</p>
-                </div>
-            </div>
+        <div class="menu-item">
+          <img src="photo/Cappuccino.jpeg" alt="Cappuccino" class="product-image">
+          <h3 class="product-name" data-en="Cappuccino" data-ar="كابتشينو">Cappuccino</h3>
+          <p class="product-description" data-en="Perfect blend of espresso and foam" data-ar="مزيج مثالي من الإسبريسو والرغوة">Perfect blend of espresso and foam</p>
+          <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
         </div>
 
-        <!-- Cold Drinks Section -->
-        <div class="menu-section active" id="cold">
-            <h2 class="section-title" data-en="Cold Drinks" data-ar="المشروبات الباردة">Cold Drinks</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="photo/V60.JPG" alt="Cold Brew" class="product-image">
-                    <h3 class="product-name" data-en="Cold Brew" data-ar="كولد برو">Cold Brew</h3>
-                    <p class="product-description" data-en="Smooth cold-brewed coffee, perfect for hot days" data-ar="قهوة باردة ناعمة، مثالية للأيام الحارة">Smooth cold-brewed coffee, perfect for hot days</p>
-                    <p class="product-price" data-en="25 SAR" data-ar="25 ريال">25 SAR</p>
-                </div>
-            </div>
+        <div class="menu-item">
+          <img src="photo/Caffe Latte.jpeg" alt="Caffe Latte" class="product-image">
+          <h3 class="product-name" data-en="Caffe Latte" data-ar="كافيه لاتيه">Caffe Latte</h3>
+          <p class="product-description" data-en="Smooth and creamy latte" data-ar="لاتيه ناعم وكريمي">Smooth and creamy latte</p>
+          <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
         </div>
 
-        <!-- Desserts Section -->
-        <div class="menu-section active" id="desserts">
-            <h2 class="section-title" data-en="Desserts" data-ar="الحلويات">Desserts</h2>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <img src="photo/CAKE.JPG" alt="Chocolate Cake" class="product-image">
-                    <h3 class="product-name" data-en="Chocolate Cake" data-ar="كيكة الشوكولاتة">Chocolate Cake</h3>
-                    <p class="product-description" data-en="Rich and moist chocolate cake topped with ganache" data-ar="كيكة شوكولاتة غنية ورطبة مزينة بجاناش لذيذ">Rich and moist chocolate cake topped with ganache</p>
-                    <p class="product-price" data-en="28 SAR" data-ar="28 ريال">28 SAR</p>
-                </div>
-            </div>
+        <div class="menu-item">
+          <img src="photo/Macchiato.jpeg" alt="Macchiato" class="product-image">
+          <h3 class="product-name" data-en="Macchiato" data-ar="ماكياتو">Macchiato</h3>
+          <p class="product-description" data-en="Espresso with a touch of milk" data-ar="إسبريسو مع لمسة حليب">Espresso with a touch of milk</p>
+          <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
         </div>
 
-        <div class="social-media">
-            <a href="#" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon snapchat" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a>
-            <a href="#" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-            <a href="#" class="social-icon tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <div class="menu-item">
+          <img src="photo/Cortado.jpeg" alt="Cortado" class="product-image">
+          <h3 class="product-name" data-en="Cortado" data-ar="كورتادو">Cortado</h3>
+          <p class="product-description" data-en="Espresso cut with warm milk" data-ar="إسبريسو مع حليب دافئ">Espresso cut with warm milk</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
         </div>
+
+        <div class="menu-item">
+          <img src="photo/Flat white.jpeg" alt="Flat White" class="product-image">
+          <h3 class="product-name" data-en="Flat White" data-ar="فلات وايت">Flat White</h3>
+          <p class="product-description" data-en="Velvety microfoam with espresso" data-ar="رغوة ناعمة مع إسبريسو">Velvety microfoam with espresso</p>
+          <p class="product-price" data-en="17 SAR" data-ar="17 ريال">17 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Amercano.jpeg" alt="Americano" class="product-image">
+          <h3 class="product-name" data-en="Americano" data-ar="أمريكانو">Americano</h3>
+          <p class="product-description" data-en="Classic espresso with hot water" data-ar="إسبريسو كلاسيكي مع ماء ساخن">Classic espresso with hot water</p>
+          <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Spanish latte.jpeg" alt="Spanish Latte" class="product-image">
+          <h3 class="product-name" data-en="Spanish Latte" data-ar="سبانش لاتيه">Spanish Latte</h3>
+          <p class="product-description" data-en="Sweet condensed milk latte" data-ar="لاتيه بالحليب المحلى">Sweet condensed milk latte</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/v60.jpeg" alt="Coffee Day" class="product-image">
+          <h3 class="product-name" data-en="Coffee Day" data-ar="كوفي داي">Coffee Day</h3>
+          <p class="product-description" data-en="Daily special coffee blend" data-ar="قهوة مميزة يومية">Daily special coffee blend</p>
+          <p class="product-price" data-en="12 SAR" data-ar="12 ريال">12 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/v60.jpeg" alt="V60 Costa Rica" class="product-image">
+          <h3 class="product-name" data-en="V60 Costa Rica" data-ar="في60 كوستاريكا">V60 Costa Rica</h3>
+          <p class="product-description" data-en="Pour over Costa Rica beans" data-ar="قهوة مقطرة من حبوب كوستاريكا">Pour over Costa Rica beans</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/v60.jpeg" alt="V60 Colombia" class="product-image">
+          <h3 class="product-name" data-en="V60 Colombia" data-ar="في60 كولومبيا">V60 Colombia</h3>
+          <p class="product-description" data-en="Pour over Colombia beans" data-ar="قهوة مقطرة من حبوب كولومبيا">Pour over Colombia beans</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/v60.jpeg" alt="V60 Uganda" class="product-image">
+          <h3 class="product-name" data-en="V60 Uganda" data-ar="في60 أوغندا">V60 Uganda</h3>
+          <p class="product-description" data-en="Pour over Uganda beans" data-ar="قهوة مقطرة من حبوب أوغندا">Pour over Uganda beans</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/v60.jpeg" alt="V60 Ethiopian" class="product-image">
+          <h3 class="product-name" data-en="V60 Ethiopian" data-ar="في60 إثيوبيا">V60 Ethiopian</h3>
+          <p class="product-description" data-en="Pour over Ethiopian beans" data-ar="قهوة مقطرة من حبوب إثيوبيا">Pour over Ethiopian beans</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Hden latte.jpeg" alt="Hden Latte" class="product-image">
+          <h3 class="product-name" data-en="Hden Latte" data-ar="هدن لاتيه">Hden Latte</h3>
+          <p class="product-description" data-en="Our signature latte" data-ar="لاتيه خاص بنا">Our signature latte</p>
+          <p class="product-price" data-en="22 SAR" data-ar="22 ريال">22 SAR</p>
+        </div>
+      </div>
     </div>
 
-    <script>
-        // === Tabs Functionality ===
-        const tabs = document.querySelectorAll(".tab-btn");
-        const sections = document.querySelectorAll(".menu-section");
+    <!-- Cold Drinks Section -->
+    <div class="menu-section active" id="cold">
+      <h2 class="section-title" data-en="Cold Drinks" data-ar="المشروبات الباردة">Cold Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="photo/Ice latte.jpeg" alt="Ice Latte" class="product-image">
+          <h3 class="product-name" data-en="Ice Latte" data-ar="آيس لاتيه">Ice Latte</h3>
+          <p class="product-description" data-en="Refreshing iced latte" data-ar="لاتيه مثلج منعش">Refreshing iced latte</p>
+          <p class="product-price" data-en="19 SAR" data-ar="19 ريال">19 SAR</p>
+        </div>
 
-        tabs.forEach(tab => {
-            tab.addEventListener("click", () => {
-                tabs.forEach(t => t.classList.remove("active"));
-                tab.classList.add("active");
+        <div class="menu-item">
+          <img src="photo/Iced spanish latte.jpeg" alt="Iced Spanish Latte" class="product-image">
+          <h3 class="product-name" data-en="Iced Spanish Latte" data-ar="سبانش لاتيه مثلج">Iced Spanish Latte</h3>
+          <p class="product-description" data-en="Iced sweet condensed milk latte" data-ar="لاتيه مثلج بالحليب المحلى">Iced sweet condensed milk latte</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
 
-                if (tab.dataset.tab === "all") {
-                    sections.forEach(s => s.classList.add("active"));
-                } else {
-                    sections.forEach(s => {
-                        s.classList.remove("active");
-                        if (s.id === tab.dataset.tab) {
-                            s.classList.add("active");
-                        }
-                    });
-                }
-            });
-        });
+        <div class="menu-item">
+          <img src="photo/Ice cortado.jpeg" alt="Ice Cortado" class="product-image">
+          <h3 class="product-name" data-en="Ice Cortado" data-ar="كورتادو مثلج">Ice Cortado</h3>
+          <p class="product-description" data-en="Iced espresso with milk" data-ar="إسبريسو مثلج مع حليب">Iced espresso with milk</p>
+          <p class="product-price" data-en="17 SAR" data-ar="17 ريال">17 SAR</p>
+        </div>
 
-        // === Language Switcher ===
-        function switchLanguage(lang) {
-            document.querySelectorAll("[data-en]").forEach(el => {
-                el.textContent = el.getAttribute(`data-${lang}`);
-            });
+        <div class="menu-item">
+          <img src="photo/Iced Americano.jpeg" alt="Iced Americano" class="product-image">
+          <h3 class="product-name" data-en="Iced Americano" data-ar="أمريكانو مثلج">Iced Americano</h3>
+          <p class="product-description" data-en="Cold espresso with water" data-ar="إسبريسو بارد مع ماء">Cold espresso with water</p>
+          <p class="product-price" data-en="16 SAR" data-ar="16 ريال">16 SAR</p>
+        </div>
 
-            document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-            document.getElementById(`lang-${lang}`).classList.add("active");
-        }
-    </script>
+        <div class="menu-item">
+          <img src="photo/Freddo espresso.jpeg" alt="Ice Freddo Espresso" class="product-image">
+          <h3 class="product-name" data-en="Ice Freddo Espresso" data-ar="فريدو إسبريسو مثلج">Ice Freddo Espresso</h3>
+          <p class="product-description" data-en="Frothy iced espresso" data-ar="إسبريسو مثلج برغوة">Frothy iced espresso</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice Oreo Double Delight" class="product-image">
+          <h3 class="product-name" data-en="Ice Oreo Double Delight" data-ar="أوريو دبل ديلايت مثلج">Ice Oreo Double Delight</h3>
+          <p class="product-description" data-en="Creamy Oreo iced drink" data-ar="مشروب أوريو مثلج كريمي">Creamy Oreo iced drink</p>
+          <p class="product-price" data-en="24 SAR" data-ar="24 ريال">24 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice Coffee Day" class="product-image">
+          <h3 class="product-name" data-en="Ice Coffee Day" data-ar="آيس كوفي داي">Ice Coffee Day</h3>
+          <p class="product-description" data-en="Iced daily special coffee" data-ar="قهوة يومية مثلجة مميزة">Iced daily special coffee</p>
+          <p class="product-price" data-en="12 SAR" data-ar="12 ريال">12 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice V60 Colombia" class="product-image">
+          <h3 class="product-name" data-en="Ice V60 Colombia" data-ar="في60 كولومبيا مثلج">Ice V60 Colombia</h3>
+          <p class="product-description" data-en="Iced pour over Colombia" data-ar="قهوة كولومبيا مقطرة مثلجة">Iced pour over Colombia</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice V60 Costa Rica" class="product-image">
+          <h3 class="product-name" data-en="Ice V60 Costa Rica" data-ar="في60 كوستاريكا مثلج">Ice V60 Costa Rica</h3>
+          <p class="product-description" data-en="Iced pour over Costa Rica" data-ar="قهوة كوستاريكا مقطرة مثلجة">Iced pour over Costa Rica</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice V60 Ethiopian" class="product-image">
+          <h3 class="product-name" data-en="Ice V60 Ethiopian" data-ar="في60 إثيوبيا مثلج">Ice V60 Ethiopian</h3>
+          <p class="product-description" data-en="Iced pour over Ethiopian" data-ar="قهوة إثيوبيا مقطرة مثلجة">Iced pour over Ethiopian</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice V60 Uganda" class="product-image">
+          <h3 class="product-name" data-en="Ice V60 Uganda" data-ar="في60 أوغندا مثلج">Ice V60 Uganda</h3>
+          <p class="product-description" data-en="Iced pour over Uganda" data-ar="قهوة أوغندا مقطرة مثلجة">Iced pour over Uganda</p>
+          <p class="product-price" data-en="21 SAR" data-ar="21 ريال">21 SAR</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Summer Drinks Section -->
+    <div class="menu-section active" id="summer">
+      <h2 class="section-title" data-en="Summer Drinks" data-ar="مشروبات الصيف">Summer Drinks</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="photo/Mojito.jpeg" alt="Mojito" class="product-image">
+          <h3 class="product-name" data-en="Mojito" data-ar="موهيتو">Mojito</h3>
+          <p class="product-description" data-en="Refreshing mint mojito" data-ar="موهيتو منعش بالنعناع">Refreshing mint mojito</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice Hibiscus.jpeg" alt="Ice Hibiscus" class="product-image">
+          <h3 class="product-name" data-en="Ice Hibiscus" data-ar="كركديه مثلج">Ice Hibiscus</h3>
+          <p class="product-description" data-en="Cold hibiscus tea" data-ar="شاي كركديه بارد">Cold hibiscus tea</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Ice passion fruit tea.jpeg" alt="Ice Passion Fruit Tea" class="product-image">
+          <h3 class="product-name" data-en="Ice Passion Fruit Tea" data-ar="شاي باشن فروت مثلج">Ice Passion Fruit Tea</h3>
+          <p class="product-description" data-en="Tropical passion fruit tea" data-ar="شاي استوائي بالباشن فروت">Tropical passion fruit tea</p>
+          <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sweets Section -->
+    <div class="menu-section active" id="sweets">
+      <h2 class="section-title" data-en="Sweets" data-ar="الحلويات">Sweets</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="photo/Truffle oreo.jpeg" alt="Truffle Oreo" class="product-image">
+          <h3 class="product-name" data-en="Truffle Oreo" data-ar="تروفل أوريو">Truffle Oreo</h3>
+          <p class="product-description" data-en="Chocolate truffle with Oreo" data-ar="تروفل شوكولاتة مع أوريو">Chocolate truffle with Oreo</p>
+          <p class="product-price" data-en="10 SAR" data-ar="10 ريال">10 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Chocolate choco cake.jpeg" alt="Chocolate Choco Cake" class="product-image">
+          <h3 class="product-name" data-en="Chocolate Choco Cake" data-ar="كيكة الشوكولاتة">Chocolate Choco Cake</h3>
+          <p class="product-description" data-en="Rich chocolate cake" data-ar="كيكة شوكولاتة غنية">Rich chocolate cake</p>
+          <p class="product-price" data-en="25 SAR" data-ar="25 ريال">25 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Brownies.jpeg" alt="Brownies" class="product-image">
+          <h3 class="product-name" data-en="Brownies" data-ar="براونيز">Brownies</h3>
+          <p class="product-description" data-en="Fudgy chocolate brownies" data-ar="براونيز شوكولاتة شهية">Fudgy chocolate brownies</p>
+          <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Brownies peanut butter.jpeg" alt="Brownies Peanut Butter" class="product-image">
+          <h3 class="product-name" data-en="Brownies Peanut Butter" data-ar="براونيز زبدة الفول السوداني">Brownies Peanut Butter</h3>
+          <p class="product-description" data-en="Brownies with peanut butter" data-ar="براونيز بزبدة الفول السوداني">Brownies with peanut butter</p>
+          <p class="product-price" data-en="15 SAR" data-ar="15 ريال">15 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Pistachio kunafa.jpeg" alt="Pistachio Kunafa" class="product-image">
+          <h3 class="product-name" data-en="Pistachio Kunafa" data-ar="كنافة بالفستق">Pistachio Kunafa</h3>
+          <p class="product-description" data-en="Crispy kunafa with pistachio" data-ar="كنافة مقرمشة بالفستق">Crispy kunafa with pistachio</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Pecan chocolate.jpeg" alt="Kinder Kunafa" class="product-image">
+          <h3 class="product-name" data-en="Kinder Kunafa" data-ar="كنافة كيندر">Kinder Kunafa</h3>
+          <p class="product-description" data-en="Kunafa with Kinder chocolate" data-ar="كنافة بشوكولاتة كيندر">Kunafa with Kinder chocolate</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Pecan chocolate.jpeg" alt="Pecan Chocolate" class="product-image">
+          <h3 class="product-name" data-en="Pecan Chocolate" data-ar="شوكولاتة البيكان">Pecan Chocolate</h3>
+          <p class="product-description" data-en="Chocolate with pecans" data-ar="شوكولاتة مع البيكان">Chocolate with pecans</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Tramisu.jpeg" alt="Tiramisu" class="product-image">
+          <h3 class="product-name" data-en="Tiramisu" data-ar="تيراميسو">Tiramisu</h3>
+          <p class="product-description" data-en="Classic Italian tiramisu" data-ar="تيراميسو إيطالي كلاسيكي">Classic Italian tiramisu</p>
+          <p class="product-price" data-en="24 SAR" data-ar="24 ريال">24 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Banana pudding.jpeg" alt="Banana Pudding" class="product-image">
+          <h3 class="product-name" data-en="Banana Pudding" data-ar="بودينغ الموز">Banana Pudding</h3>
+          <p class="product-description" data-en="Creamy banana pudding" data-ar="بودينغ موز كريمي">Creamy banana pudding</p>
+          <p class="product-price" data-en="27 SAR" data-ar="27 ريال">27 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Cinnamon roll.jpeg" alt="Cinnamon Roll" class="product-image">
+          <h3 class="product-name" data-en="Cinnamon Roll" data-ar="سينابون">Cinnamon Roll</h3>
+          <p class="product-description" data-en="Warm cinnamon roll" data-ar="سينابون دافئ">Warm cinnamon roll</p>
+          <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/London pecan.jpeg" alt="London Pecan" class="product-image">
+          <h3 class="product-name" data-en="London Pecan" data-ar="لندن بيكان">London Pecan</h3>
+          <p class="product-description" data-en="Pecan tart London style" data-ar="تارت بيكان على الطريقة اللندنية">Pecan tart London style</p>
+          <p class="product-price" data-en="25 SAR" data-ar="25 ريال">25 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Cheese cake.jpeg" alt="Cheese Cake" class="product-image">
+          <h3 class="product-name" data-en="Cheese Cake" data-ar="تشيز كيك">Cheese Cake</h3>
+          <p class="product-description" data-en="Creamy cheese cake" data-ar="تشيز كيك كريمي">Creamy cheese cake</p>
+          <p class="product-price" data-en="29 SAR" data-ar="29 ريال">29 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Carrot cake.jpeg" alt="Carrot Cake" class="product-image">
+          <h3 class="product-name" data-en="Carrot Cake" data-ar="كيكة الجزر">Carrot Cake</h3>
+          <p class="product-description" data-en="Moist carrot cake with cream" data-ar="كيكة جزر رطبة مع الكريمة">Moist carrot cake with cream</p>
+          <p class="product-price" data-en="29 SAR" data-ar="29 ريال">29 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Magic bar.jpeg" alt="Magic Bar" class="product-image">
+          <h3 class="product-name" data-en="Magic Bar" data-ar="ماجيك بار">Magic Bar</h3>
+          <p class="product-description" data-en="Sweet layered magic bar" data-ar="حلى ماجيك بار بالطبقات">Sweet layered magic bar</p>
+          <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Basbousa cheese cake.jpeg" alt="Basbousa Cheese Cake" class="product-image">
+          <h3 class="product-name" data-en="Basbousa Cheese Cake" data-ar="بسبوسة تشيز كيك">Basbousa Cheese Cake</h3>
+          <p class="product-description" data-en="Basbousa with cheese cake" data-ar="بسبوسة مع تشيز كيك">Basbousa with cheese cake</p>
+          <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Cookies.jpeg" alt="Cookies" class="product-image">
+          <h3 class="product-name" data-en="Cookies" data-ar="كوكيز">Cookies</h3>
+          <p class="product-description" data-en="Freshly baked cookies" data-ar="كوكيز طازج">Freshly baked cookies</p>
+          <p class="product-price" data-en="12 SAR" data-ar="12 ريال">12 SAR</p>
+        </div>
+
+        <div class="menu-item">
+          <img src="photo/Water.jpeg" alt="Water" class="product-image">
+          <h3 class="product-name" data-en="Water" data-ar="ماء">Water</h3>
+          <p class="product-description" data-en="Refreshing bottled water" data-ar="ماء معبأ منعش">Refreshing bottled water</p>
+          <p class="product-price" data-en="5 SAR" data-ar="5 ريال">5 SAR</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pastry Section -->
+    <div class="menu-section active" id="pastry">
+      <h2 class="section-title" data-en="Pastry" data-ar="المعجنات">Pastry</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="photo/Cheese croissant.jpeg" alt="Cheese Croissant" class="product-image">
+          <h3 class="product-name" data-en="Cheese Croissant" data-ar="كرواسون بالجبن">Cheese Croissant</h3>
+          <p class="product-description" data-en="Buttery croissant with cheese" data-ar="كرواسون بالزبدة مع الجبن">Buttery croissant with cheese</p>
+          <p class="product-price" data-en="18 SAR" data-ar="18 ريال">18 SAR</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-media">
+      <a href="https://www.instagram.com/hden.sa" class="social-icon instagram" aria-label="Instagram" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/966500465026" class="social-icon whatsapp" aria-label="WhatsApp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://www.tiktok.com/@hden.sa" class="social-icon tiktok" aria-label="TikTok" target="_blank">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p class="footer-copyright">&copy; 2025 Hden Coffee | All rights reserved.</p>
+      <div class="footer-dev">
+        <span>برمجة وتطوير</span>
+        <a href="https://wa.me/966578661535?text=%D8%A7%D9%87%D9%84%D8%A7%20%D8%AD%D8%A7%D8%A8%20%D8%A7%D8%B9%D8%B1%D9%81%20%D8%B9%D9%86%20%D8%AE%D8%AF%D9%85%D8%A7%D8%AA%D9%83" target="_blank">
+          966578661535
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
