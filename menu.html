@@ -21,10 +21,20 @@
     <button onclick="switchLanguage('en')" class="lang-btn active" id="lang-en">EN</button>
     <button onclick="switchLanguage('ar')" class="lang-btn" id="lang-ar">AR</button>
   </div>
+<!-- زر العودة للأعلى -->
+<button class="back-to-top" id="backToTop" aria-label="الانتقال إلى أعلى الصفحة" title="العودة للأعلى">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 19V5" />
+  <path d="M5 12l7-7 7 7" />
+</svg>
+</button>
 
   <div class="menu-container">
     <a href="index.html" class="back-btn" data-en="← Back to Home" data-ar="← العودة للرئيسية">← Back to Home</a>
-    <h1 class="menu-title" data-en="Our Menu" data-ar="قائمتنا">Our Menu</h1>
+    <!-- <h1 class="menu-title" data-en="Our Menu" data-ar="قائمتنا">Our Menu</h1> -->
+<div class="menu-title">
+  <img src="photo/hden-logo.png" alt="HDEN Logo" class="menu-logo">
+</div>
 
     <!-- Tabs -->
     <div class="tabs">
@@ -179,12 +189,12 @@
           <p class="product-price" data-en="14 SAR" data-ar="14 ريال">14 SAR</p>
         </div>
 
-        <div class="menu-item">
+        <!-- <div class="menu-item">
           <img src="photo/Ice v60.jpeg" alt="Ice Oreo Double Delight" class="product-image">
           <h3 class="product-name" data-en="Ice Oreo Double Delight" data-ar="أوريو دبل ديلايت مثلج">Ice Oreo Double Delight</h3>
           <p class="product-description" data-en="Creamy Oreo iced drink" data-ar="مشروب أوريو مثلج كريمي">Creamy Oreo iced drink</p>
           <p class="product-price" data-en="24 SAR" data-ar="24 ريال">24 SAR</p>
-        </div>
+        </div> -->
 
         <div class="menu-item">
           <img src="photo/Ice v60.jpeg" alt="Ice Coffee Day" class="product-image">
@@ -232,6 +242,12 @@
           <h3 class="product-name" data-en="Mojito" data-ar="موهيتو">Mojito</h3>
           <p class="product-description" data-en="Refreshing mint mojito" data-ar="موهيتو منعش بالنعناع">Refreshing mint mojito</p>
           <p class="product-price" data-en="20 SAR" data-ar="20 ريال">20 SAR</p>
+        </div>
+        <div class="menu-item">
+          <img src="photo/Ice v60.jpeg" alt="Ice Oreo Double Delight" class="product-image">
+          <h3 class="product-name" data-en="Ice Oreo Double Delight" data-ar="أوريو دبل ديلايت مثلج">Ice Oreo Double Delight</h3>
+          <p class="product-description" data-en="Creamy Oreo iced drink" data-ar="مشروب أوريو مثلج كريمي">Creamy Oreo iced drink</p>
+          <p class="product-price" data-en="24 SAR" data-ar="24 ريال">24 SAR</p>
         </div>
 
         <div class="menu-item">
@@ -332,7 +348,7 @@
         </div>
 
         <div class="menu-item">
-          <img src="photo/Cheese cake.jpeg" alt="Cheese Cake" class="product-image">
+          <img src="photo/Cheese Cake.jpg" alt="Cheese Cake" class="product-image">
           <h3 class="product-name" data-en="Cheese Cake" data-ar="تشيز كيك">Cheese Cake</h3>
           <p class="product-description" data-en="Creamy cheese cake" data-ar="تشيز كيك كريمي">Creamy cheese cake</p>
           <p class="product-price" data-en="29 SAR" data-ar="29 ريال">29 SAR</p>
@@ -360,7 +376,7 @@
         </div>
 
         <div class="menu-item">
-          <img src="photo/Cookies.jpeg" alt="Cookies" class="product-image">
+          <img src="photo/cookies.jpg" alt="Cookies" class="product-image">
           <h3 class="product-name" data-en="Cookies" data-ar="كوكيز">Cookies</h3>
           <p class="product-description" data-en="Freshly baked cookies" data-ar="كوكيز طازج">Freshly baked cookies</p>
           <p class="product-price" data-en="12 SAR" data-ar="12 ريال">12 SAR</p>

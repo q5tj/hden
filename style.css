@@ -307,12 +307,39 @@ body[lang="ar"] .back-btn:hover {
   font-weight: 700;
 }
 
+/* Tabs scrollable for mobile */
 .tabs {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 30px 0;
-  flex-wrap: wrap;
+  overflow-x: auto; /* يسمح بالتمرير الأفقي */
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0 10px;
+  -webkit-overflow-scrolling: touch; /* smooth scroll على iOS */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير */
+}
+
+.tab-btn {
+  flex: 0 0 auto; /* منع التمدد التلقائي */
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+  .tab-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
 }
 
 .tab-btn {
@@ -569,5 +596,106 @@ footer {
 
   footer {
     padding: 30px 15px;
+  }
+}
+/* //Back to Top Button */
+/* زر العودة للأعلى - ستايل عصري وجذاب */
+.back-to-top {
+  position: fixed;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #495057, #111827);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  transition: 
+    opacity 0.3s ease, 
+    transform 0.3s ease, 
+    box-shadow 0.3s ease, 
+    background 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* ظهور الزر مع تأثير نبض خفيف */
+.back-to-top.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  animation: pulse 2s infinite;
+}
+
+/* تأثير عند التحويم */
+.back-to-top:hover {
+  background: linear-gradient(135deg, #6c757d, #343a40);
+  transform: scale(1.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* أيقونة أكبر وواضحة */
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+  stroke-width: 2;
+}
+
+/* تأثير نبض خفيف */
+@keyframes pulse {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.05); }
+  100% { transform: translateY(0) scale(1); }
+}
+.logo-container {
+  max-width: 200px;
+  margin: 0 auto;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.header-logo {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+/* لوقو المنيو */
+.menu-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.menu-logo {
+  width: 200px;        /* الحجم الافتراضي */
+  height: 200px;       /* لجعلها دائرة كاملة */
+  border-radius: 50%;  /* يجعل الصورة دائرية */
+  object-fit: cover;   /* يحافظ على أبعاد الصورة داخل الدائرة */
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-logo {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-logo {
+    width: 120px;
+    height: 120px;
   }
 }
